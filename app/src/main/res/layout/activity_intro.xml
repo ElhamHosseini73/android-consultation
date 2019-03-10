@@ -6,4 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".Activitys.Intro">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/nextStep"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_next_white"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:alpha=".5"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:id="@+id/layoutDots"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25dp"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>
