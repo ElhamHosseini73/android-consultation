@@ -15,6 +15,7 @@ import java.util.List;
 import ir.rayapars.consultation.Classes.MenuClass;
 import ir.rayapars.consultation.Fragments.MyAccountFragment;
 import ir.rayapars.consultation.Fragments.RewardCodeFragment;
+import ir.rayapars.consultation.Fragments.RuleFragment;
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.databinding.ItemMenuBinding;
 
@@ -75,6 +76,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
 
 
                 } else if (list.get(position).idMenu.equals("3")) {
+
+                    FragmentTransaction transaction = context.getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                    transaction.add(R.id.frameParent, new RuleFragment()).addToBackStack("").commit();
+
+
                 } else if (list.get(position).idMenu.equals("4")) {
                 } else if (list.get(position).idMenu.equals("5")) {
                 } else if (list.get(position).idMenu.equals("6")) {
