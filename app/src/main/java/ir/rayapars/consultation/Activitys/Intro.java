@@ -65,8 +65,8 @@ public class Intro extends AppCompatActivity {
                 } else {
 
                     // move to next screen
-                    // startActivity(new Intent(Intro.this, CompletedProfileActivity.class));
-                    //  finish();
+                    startActivity(new Intent(Intro.this, CompletedProfileActivity.class));
+                    finish();
                 }
             }
         });

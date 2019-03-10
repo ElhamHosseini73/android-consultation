@@ -1,0 +1,16 @@
+package ir.rayapars.consultation.Classes;
+
+public class MenuClass {
+
+    public String titleMenu;
+    public String idMenu;
+    public int imgMenu;
+
+    public MenuClass(String idMenu, String titleMenu, int imgMenu) {
+
+        this.titleMenu = titleMenu;
+        this.idMenu = idMenu;
+        this.imgMenu = imgMenu;
+    }
+
+}
