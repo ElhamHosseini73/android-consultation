@@ -25,7 +25,7 @@
     <color name="textColorErrorToast">#fff</color>
     <color name="textColorMain">#314f69</color>
     <color name="icon_action_bar_color">#000000</color>
-    <color name="lightGray">#f0f2f2</color>
+    <color name="lightGray">#D1D2D2</color>
     <color name="light_background">#95000000</color>
     <color name="light_gray">#f2f2f2</color>
     <color name="light_icon">#ffffff</color>

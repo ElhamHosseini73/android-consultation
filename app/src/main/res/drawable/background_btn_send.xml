@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:state_enabled="true" android:state_pressed="false">
+        <layer-list>
+            <item>
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="#08000000"/>
+                </shape>
+            </item>
+            <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="#15000000"/>
+                </shape>
+            </item>
+            <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="4dp">
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="@color/colorPrimaryDark"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_enabled="false">
+        <layer-list>
+            <item>
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="#08000000"/>
+                </shape>
+            </item>
+            <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="#15000000"/>
+                </shape>
+            </item>
+            <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="4dp">
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="#7e7e7e"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="#08000000"/>
+                </shape>
+            </item>
+            <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="#15000000"/>
+                </shape>
+            </item>
+            <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="4dp">
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <solid android:color="@color/colorPrimaryDark"/>
+                </shape>
+            </item>
+            <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="4dp">
+                <shape>
+                    <corners android:radius="10dp"/>
+                    <gradient android:startColor="#30000000" android:type="radial" android:gradientRadius="512"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

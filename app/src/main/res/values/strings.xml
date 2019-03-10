@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Consultation</string>
+    <string name="turning_introducer_code">کد معرف (اختیاری)</string>
+    <string name="turning_email">پست الکترونیکی (اختیاری)</string>
+    <string name="turning_family">نام خانوادگی</string>
+    <string name="turning_mobile">شماره همراه</string>
+    <string name="txt_title">انتقادات و پشنهادات خود را از طریق فرم زیر ارسال نمایید.</string>
+    <string name="txt_suggest">متن پیشنهاد خود را وارد نمایید</string>
+    <string name="txt_pishnahad">پیشنهاد</string>
+    <string name="txt_enteghad">انتقاد</string>
+    <string name="hint_name">نام</string>
+    <string name="hint_family">نام خانوادگی</string>
+    <color name="white">#fff</color>
+    <string name="txt_share_comment">دوستان و آشنایان خود را با استفاده از گزینه به اشتراک گذاری به روان پژوه معرفی کنید.</string>
+    <string name="txt_introduction_code">کد دعوت شما</string>
+    <string name="btn_accept">تایید</string>
 </resources>
