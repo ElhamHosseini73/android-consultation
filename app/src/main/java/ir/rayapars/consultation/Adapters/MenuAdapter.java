@@ -63,6 +63,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
                 if (list.get(position).idMenu.equals("1")) {
 
                     FragmentTransaction transaction = context.getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
                     transaction.add(R.id.frameMain, new MyAccountFragment()).addToBackStack("").commit();
 
                 } else if (list.get(position).idMenu.equals("2")) {

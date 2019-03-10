@@ -14,4 +14,8 @@
     <string name="txt_share_comment">دوستان و آشنایان خود را با استفاده از گزینه به اشتراک گذاری به روان پژوه معرفی کنید.</string>
     <string name="txt_introduction_code">کد دعوت شما</string>
     <string name="btn_accept">تایید</string>
+    <string name="address">آدرس</string>
+    <string name="introducer_code">کد معرف</string>
+    <string name="hint_introducer_codee">کد معرف (اختیاری)</string>
+    <string name="hint_mobile">شماره همراه (اختیاری)</string>
 </resources>
