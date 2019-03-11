@@ -1,6 +1,5 @@
-package ir.rayapars.consultation.Activitys;
+package ir.rayapars.consultation.activitys;
 
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +13,9 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ir.rayapars.consultation.Adapters.MenuAdapter;
-import ir.rayapars.consultation.Classes.MenuClass;
-import ir.rayapars.consultation.Fragments.MainFragment;
+import ir.rayapars.consultation.adapters.MenuAdapter;
+import ir.rayapars.consultation.classes.MenuClass;
+import ir.rayapars.consultation.fragments.MainFragment;
 import ir.rayapars.consultation.R;
 
 public class MainActivity extends AppCompatActivity {

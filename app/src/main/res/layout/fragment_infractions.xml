@@ -231,7 +231,7 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <ir.rayapars.consultation.classes.LinedEditText
                     android:id="@+id/edtDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -247,7 +247,6 @@
                     android:textColorHint="#b9afaf"
                     android:textSize="15sp" />
 
-
             </LinearLayout>
 
             <ImageView
@@ -257,6 +256,21 @@
                 android:src="@drawable/ic_email" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_btn_send"
+            android:fontFamily="@font/rayafa_font"
+            android:text="ارسال"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llMessage" />
 
     </android.support.constraint.ConstraintLayout>
 

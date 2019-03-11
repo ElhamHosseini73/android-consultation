@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.Adapters;
+package ir.rayapars.consultation.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import ir.rayapars.consultation.Classes.MenuClass;
-import ir.rayapars.consultation.Fragments.InfractionsFragment;
-import ir.rayapars.consultation.Fragments.MyAccountFragment;
-import ir.rayapars.consultation.Fragments.RewardCodeFragment;
-import ir.rayapars.consultation.Fragments.RuleFragment;
+import ir.rayapars.consultation.classes.MenuClass;
+import ir.rayapars.consultation.fragments.InfractionsFragment;
+import ir.rayapars.consultation.fragments.MyAccountFragment;
+import ir.rayapars.consultation.fragments.RewardCodeFragment;
+import ir.rayapars.consultation.fragments.RuleFragment;
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.databinding.ItemMenuBinding;
 

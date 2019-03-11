@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.Activitys;
+package ir.rayapars.consultation.activitys;
 
 import android.content.Intent;
 import android.os.Build;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import ir.rayapars.consultation.Adapters.IntroAdapter;
+import ir.rayapars.consultation.adapters.IntroAdapter;
 import ir.rayapars.consultation.R;
 
 public class Intro extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.Activitys;
+package ir.rayapars.consultation.activitys;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

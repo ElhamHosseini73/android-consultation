@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.Classes;
+package ir.rayapars.consultation.classes;
 
 public class MenuClass {
 

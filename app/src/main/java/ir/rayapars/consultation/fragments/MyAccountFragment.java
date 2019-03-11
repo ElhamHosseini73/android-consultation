@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.Fragments;
+package ir.rayapars.consultation.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

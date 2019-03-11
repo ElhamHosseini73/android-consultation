@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.Adapters;
+package ir.rayapars.consultation.adapters;
 
 import android.app.Activity;
 import android.content.Context;

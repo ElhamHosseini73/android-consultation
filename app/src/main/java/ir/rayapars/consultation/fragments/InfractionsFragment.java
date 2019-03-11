@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.Fragments;
+package ir.rayapars.consultation.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,9 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ir.rayapars.consultation.databinding.FragmentRewardCodeBinding;
+import ir.rayapars.consultation.databinding.FragmentInfractionsBinding;
 
-public class RewardCodeFragment extends Fragment {
+public class InfractionsFragment extends Fragment {
+
 
     View v;
 
@@ -18,23 +19,22 @@ public class RewardCodeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        FragmentRewardCodeBinding binding = FragmentRewardCodeBinding.inflate(getLayoutInflater());
+        FragmentInfractionsBinding binding = FragmentInfractionsBinding.inflate(getLayoutInflater());
 
         v = binding.getRoot();
-        v.setFocusable(true);
         v.setClickable(true);
+        v.setFocusable(true);
 
-        binding.toolbar.txtPageName.setText("دعوت دوستان");
 
         binding.toolbar.imBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 getFragmentManager().popBackStack();
-
             }
         });
-        return v;
 
+        binding.toolbar.txtPageName.setText("گزارش تخلف ");
+        return v;
     }
 }
