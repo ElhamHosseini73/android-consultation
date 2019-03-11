@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import ir.rayapars.consultation.classes.MenuClass;
+import ir.rayapars.consultation.fragments.AboutUsFragment;
 import ir.rayapars.consultation.fragments.CallFragment;
 import ir.rayapars.consultation.fragments.FeadBackFragment;
 import ir.rayapars.consultation.fragments.InfractionsFragment;
@@ -105,6 +106,11 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
                     transaction.add(R.id.frameParent, new CallFragment()).addToBackStack("").commit();
 
                 } else if (list.get(position).idMenu.equals("8")) {
+
+                    FragmentTransaction transaction = context.getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                    transaction.add(R.id.frameParent, new AboutUsFragment()).addToBackStack("").commit();
+
                 } else if (list.get(position).idMenu.equals("9")) {
                 }
 
