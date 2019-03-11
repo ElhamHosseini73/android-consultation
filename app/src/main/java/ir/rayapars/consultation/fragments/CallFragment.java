@@ -8,10 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ir.rayapars.consultation.databinding.FragmentInfractionsBinding;
+import ir.rayapars.consultation.databinding.FragmentCallBinding;
 
-public class InfractionsFragment extends Fragment {
-
+public class CallFragment extends Fragment {
 
     View v;
 
@@ -19,22 +18,10 @@ public class InfractionsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        FragmentInfractionsBinding binding = FragmentInfractionsBinding.inflate(getLayoutInflater());
-
+        FragmentCallBinding binding = FragmentCallBinding.inflate(getLayoutInflater());
         v = binding.getRoot();
         v.setClickable(true);
         v.setFocusable(true);
-
-
-        binding.toolbar.imBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                getFragmentManager().popBackStack();
-            }
-        });
-
-        binding.toolbar.txtPageName.setText("گزارش تخلف ");
 
         return v;
     }

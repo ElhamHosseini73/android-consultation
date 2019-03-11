@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import ir.rayapars.consultation.classes.MenuClass;
+import ir.rayapars.consultation.fragments.CallFragment;
+import ir.rayapars.consultation.fragments.FeadBackFragment;
 import ir.rayapars.consultation.fragments.InfractionsFragment;
 import ir.rayapars.consultation.fragments.MyAccountFragment;
 import ir.rayapars.consultation.fragments.RewardCodeFragment;
@@ -90,12 +92,21 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
                     transaction.add(R.id.frameParent, new InfractionsFragment()).addToBackStack("").commit();
 
                 } else if (list.get(position).idMenu.equals("5")) {
+
+                    FragmentTransaction transaction = context.getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                    transaction.add(R.id.frameParent, new FeadBackFragment()).addToBackStack("").commit();
+
                 } else if (list.get(position).idMenu.equals("6")) {
                 } else if (list.get(position).idMenu.equals("7")) {
+
+                    FragmentTransaction transaction = context.getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                    transaction.add(R.id.frameParent, new CallFragment()).addToBackStack("").commit();
+
                 } else if (list.get(position).idMenu.equals("8")) {
                 } else if (list.get(position).idMenu.equals("9")) {
                 }
-
 
                 if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
 

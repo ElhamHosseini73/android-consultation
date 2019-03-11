@@ -6,6 +6,7 @@
     <string name="turning_mobile">شماره همراه</string>
     <string name="txt_title">انتقادات و پشنهادات خود را از طریق فرم زیر ارسال نمایید.</string>
     <string name="txt_suggest">متن پیشنهاد خود را وارد نمایید</string>
+    <string name="txt_criticize">متن انتقاد خود را وارد نمایید</string>
     <string name="txt_pishnahad">پیشنهاد</string>
     <string name="txt_enteghad">انتقاد</string>
     <string name="hint_name">نام</string>

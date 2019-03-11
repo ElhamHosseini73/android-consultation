@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f2f2">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/action_bar_fragment"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="12dp"
+            android:fontFamily="@font/rayafa_font"
+            android:gravity="center"
+            android:text="@string/txt_title"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <ir.rayapars.consultation.classes.SegmentedRadioGroup
+            android:id="@+id/segmentType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:checkedButton="@+id/btnSuggest"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <RadioButton
+                android:id="@+id/btnSuggest"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:fontFamily="@font/rayafa_font"
+                android:gravity="center"
+                android:text="@string/txt_pishnahad"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/btnCriticism"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:fontFamily="@font/rayafa_font"
+                android:gravity="center"
+                android:text="@string/txt_enteghad"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </ir.rayapars.consultation.classes.SegmentedRadioGroup>
+
+        <ir.rayapars.consultation.classes.LinedEditText
+            android:id="@+id/edtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="#79ffffff"
+            android:fontFamily="@font/rayafa_font"
+            android:gravity="top|right|center_vertical|center_horizontal|center"
+            android:hint="@string/txt_suggest"
+            android:minHeight="150dp"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#b9afaf"
+            android:textSize="14dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/segmentType" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_btn_send"
+            android:fontFamily="@font/rayafa_font"
+            android:text="ارسال"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtDesc" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
