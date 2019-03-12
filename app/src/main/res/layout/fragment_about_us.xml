@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-    
+
     <LinearLayout xmlns:noghteh="http://noghteh.ir"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,11 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize" />
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -26,7 +24,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="110dp"
                 android:orientation="vertical">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -51,11 +48,9 @@
 
                 </LinearLayout>
 
-
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -77,13 +72,11 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:orientation="vertical">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"

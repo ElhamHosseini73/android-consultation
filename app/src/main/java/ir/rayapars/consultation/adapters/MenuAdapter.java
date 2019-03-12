@@ -122,7 +122,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
 
                     drawerLayout.openDrawer(Gravity.RIGHT);
                 }
-
             }
         });
 

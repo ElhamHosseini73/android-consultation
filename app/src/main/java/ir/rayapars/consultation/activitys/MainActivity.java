@@ -1,5 +1,8 @@
 package ir.rayapars.consultation.activitys;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,15 +17,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.rayapars.consultation.adapters.MenuAdapter;
+import ir.rayapars.consultation.classes.BottomNavigationViewHelper;
 import ir.rayapars.consultation.classes.MenuClass;
-import ir.rayapars.consultation.fragments.MainFragment;
 import ir.rayapars.consultation.R;
+import ir.rayapars.consultation.fragments.ClinicFragment;
+import ir.rayapars.consultation.fragments.ConsultantFragment;
+import ir.rayapars.consultation.fragments.MainFragment;
+import ir.rayapars.consultation.fragments.MyAccountFragment;
+import ir.rayapars.consultation.fragments.RatingFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView imgMenu;
     DrawerLayout activityMain;
     RecyclerView recycleMenu;
+    public static BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
         imgMenu = (ImageView) findViewById(R.id.menu);
         activityMain = (DrawerLayout) findViewById(R.id.activity_main);
         recycleMenu = (RecyclerView) findViewById(R.id.recycleMenu);
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.frameMain, new MainFragment()).commit();
+        navigation = findViewById(R.id.bottomNavigationView);
+        BottomNavigationViewHelper.removeShiftMode(navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         imgMenu.setOnClickListener(new View.OnClickListener() {
 
@@ -72,5 +81,93 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
+
+    /*mTabHost.addTab(mTabHost.newTabSpec("tab5").setIndicator(myAccountView),
+                MyAccountFragment.class, null);
+
+        mTabHost.addTab(mTabHost.newTabSpec("tab4").setIndicator(clinicView),
+                ClinicFragment.class, null);
+
+        mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator(ratingView),
+                RatingFragment.class, null);
+
+        mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator(consultantView),
+                ConsultantFragment.class, null);
+*/
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
+
+            switch (item.getItemId()) {
+
+                case R.id.navigation_home:
+
+                    for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+
+                        getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
+                    }
+
+                    FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
+                    transaction1.add(R.id.frameMain, new MainFragment()).commit();
+                    return true;
+
+                case R.id.navigation_messages:
+
+                    for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+
+                        getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
+                    }
+
+                    FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
+                    transaction2.add(R.id.frameMain, new RatingFragment()).commit();
+                    return true;
+
+                case R.id.navigation_favoritaes:
+
+                    for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+
+                        getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+                    }
+
+                    FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
+                    transaction4.add(R.id.frameMain, new ClinicFragment()).commit();
+                    return true;
+
+                case R.id.navigation_profile:
+
+                    for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+
+                        getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
+                    }
+
+                    FragmentTransaction transaction3 = getSupportFragmentManager().beginTransaction();
+                    transaction3.add(R.id.frameMain, new MyAccountFragment()).commit();
+                    return true;
+
+                case R.id.navigation_paymen:
+
+                    for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+
+                        getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
+                    }
+
+                    FragmentTransaction transaction5 = getSupportFragmentManager().beginTransaction();
+                    transaction5.add(R.id.frameMain, new ConsultantFragment()).commit();
+                    return true;
+
+            }
+
+            return false;
+        }
+    };
+
+
 }
