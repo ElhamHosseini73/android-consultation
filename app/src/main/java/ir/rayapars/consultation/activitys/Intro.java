@@ -23,6 +23,7 @@ public class Intro extends AppCompatActivity {
     TextView[] dots;
     IntroAdapter introAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
