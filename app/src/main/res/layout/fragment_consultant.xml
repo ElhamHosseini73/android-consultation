@@ -1,10 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:noghteh="http://noghteh.ir"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background_fragment"
+        android:clickable="true">
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/background_view"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
+
+            <Spinner
+                android:id="@+id/spinnerCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="right" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/rayafa_font"
+                android:gravity="right"
+                android:text="انتخاب شهر"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/llCity"
+            android:src="@color/light_gray" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="?android:attr/actionBarSize"
+            android:visibility="gone"
+            app:indicatorColor="@color/originalThemeColor"
+            app:indicatorName="BallBeatIndicator" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listViewConsultant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llCity"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp"
+            android:scrollbars="none" />
+    </RelativeLayout>
+
 
 </layout>
