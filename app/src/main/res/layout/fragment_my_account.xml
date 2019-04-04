@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/main_imageview_placeholder"
+                    android:id="@+id/imageview"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:scaleType="centerCrop"
@@ -35,10 +35,10 @@
                     android:layout_centerInParent="true"
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/main_imageview_placeholder"
-                    app:layout_constraintLeft_toLeftOf="@+id/main_imageview_placeholder"
-                    app:layout_constraintRight_toRightOf="@+id/main_imageview_placeholder"
-                    app:layout_constraintTop_toTopOf="@+id/main_imageview_placeholder">
+                    app:layout_constraintBottom_toBottomOf="@+id/imageview"
+                    app:layout_constraintLeft_toLeftOf="@+id/imageview"
+                    app:layout_constraintRight_toRightOf="@+id/imageview"
+                    app:layout_constraintTop_toTopOf="@+id/imageview">
 
                     <ImageView
                         android:id="@+id/imgProfile"
@@ -83,7 +83,7 @@
                     android:orientation="horizontal"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/main_imageview_placeholder">
+                    app:layout_constraintTop_toBottomOf="@+id/imageview">
 
                     <LinearLayout
                         android:layout_width="0dp"

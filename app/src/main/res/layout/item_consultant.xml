@@ -116,8 +116,8 @@
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/ic_profile_gray"
-                    app:civ_border_color="@android:color/darker_gray"
-                    app:civ_border_width="1dp" />
+                    app:border_color="@android:color/darker_gray"
+                    app:border_width="1dp"/>
 
 
             </LinearLayout>

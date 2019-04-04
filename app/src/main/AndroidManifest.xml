@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activitys.CompletedProfileActivity"></activity>
+        <activity android:name=".activitys.CompletedProfileActivity" />
         <activity android:name=".activitys.Intro" />
         <activity android:name=".activitys.SplashActivity">
             <intent-filter>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,7 +43,7 @@ public class ConsultantFragment extends Fragment {
         }
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        ConsultantAdapter consultantAdapter = new ConsultantAdapter(list, v.getContext());
+        ConsultantAdapter consultantAdapter = new ConsultantAdapter(list, (AppCompatActivity) v.getContext());
         binding.listViewConsultant.setLayoutManager(manager);
         binding.listViewConsultant.setAdapter(consultantAdapter);
 
