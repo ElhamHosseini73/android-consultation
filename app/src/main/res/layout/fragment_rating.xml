@@ -1,10 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </LinearLayout>
+        <android.support.v7.widget.CardView
+            android:id="@+id/lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            app:cardElevation="7dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:fontFamily="@font/rayafa_font"
+                    android:text="تایید"
+                    android:textColor="#000"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/circle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:fontFamily="@font/rayafa_font"
+                    android:text="مشخصات"
+                    android:textColor="#000"
+                    android:textSize="12sp" />
+
+                <ImageView
+
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/circle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:fontFamily="@font/rayafa_font"
+                    android:text="انتخاب زمان"
+                    android:textColor="#000"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/clock"
+                    android:tint="#f97808" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/imageCheir"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_event_seat"
+            android:tint="#8c8c8c"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lin" />
+
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@font/rayafa_font"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:text="نوع مشاوره"
+            android:textColor="#5C5B5B"
+            app:layout_constraintRight_toLeftOf="@id/imageCheir"
+            app:layout_constraintTop_toBottomOf="@+id/lin" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintRight_toLeftOf="@id/txt1"
+            app:layout_constraintTop_toBottomOf="@+id/lin">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rayafa_font"
+                android:text="غیر حضوری"
+                android:textColor="#131313"
+                android:textSize="12dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rayafa_font"
+                android:text="حضوری"
+                android:textColor="#131313"
+                android:textSize="12dp" />
+
+
+        </RadioGroup>
+
+
+        <ImageView
+            android:id="@+id/imageCheir1"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_event_seat"
+            android:tint="#8c8c8c"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageCheir" />
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/rayafa_font"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:text="مورد مشاوره"
+            android:textColor="#5C5B5B"
+            android:textSize="12dp"
+            app:layout_constraintRight_toLeftOf="@id/imageCheir1"
+            app:layout_constraintTop_toBottomOf="@+id/txt1" />
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/rayafa_font"
+            android:textColor="#131313"
+            android:textSize="12dp"
+            android:entries="@array/spinnerType"
+            app:layout_constraintRight_toLeftOf="@id/txt2"
+            app:layout_constraintTop_toBottomOf="@+id/txt1" />
+
+
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_user"
+            android:tint="#8c8c8c"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageCheir1" />
+
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/rayafa_font"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:text="انتخاب مشاوره"
+            android:textColor="#5C5B5B"
+            android:textSize="12dp"
+            app:layout_constraintRight_toLeftOf="@id/imageUser"
+            app:layout_constraintTop_toBottomOf="@+id/imageCheir1" />
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/rayafa_font"
+            android:textColor="#131313"
+            android:textSize="12dp"
+            android:entries="@array/spinnerChoos"
+            app:layout_constraintRight_toLeftOf="@id/txt3"
+            app:layout_constraintTop_toBottomOf="@+id/imageCheir1" />
+
+
+        <ImageView
+            android:id="@+id/imageDate"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_turn"
+            android:tint="#8c8c8c"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageUser" />
+
+        <TextView
+            android:id="@+id/txt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/rayafa_font"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:text="تاریخ مشاوره را انتخاب نمایید"
+            android:textColor="#5C5B5B"
+            android:textSize="12dp"
+            app:layout_constraintRight_toLeftOf="@id/imageDate"
+            app:layout_constraintTop_toBottomOf="@+id/imageUser" />
+
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/background_btn_send"
+            android:fontFamily="@font/rayafa_font"
+            android:text="ادامه"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt4" />
+
+        <TextView
+            android:id="@+id/txt6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/corner_blue"
+            android:fontFamily="@font/rayafa_font"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="7dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="7dp"
+            android:text="هزینه اولین جلسه خدمات مشاوره"
+            android:textColor="#5C5B5B"
+            android:textSize="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+
+        <TextView
+            android:id="@+id/txt8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/rayafa_font"
+            android:text="دکتری: 45 دقیقه 80 هزار تومان"
+            android:textColor="#5C5B5B"
+            android:textSize="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt6" />
+
+
+        <TextView
+            android:id="@+id/txt9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/rayafa_font"
+            android:text="کارشناس ارشد : 45 دقیقه 70 هزار تومان"
+            android:textColor="#5C5B5B"
+            android:textSize="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt8" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </layout>

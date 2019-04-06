@@ -10,9 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ir.rayapars.consultation.R;
-import ir.rayapars.consultation.databinding.FragmentRatingBinding;
+import ir.rayapars.consultation.databinding.FragmentRating1Binding;
 
-public class RatingFragment extends Fragment {
+public class RatingFragment1 extends Fragment {
 
     View v;
 
@@ -20,7 +20,7 @@ public class RatingFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        FragmentRatingBinding binding = FragmentRatingBinding.inflate(getLayoutInflater());
+        FragmentRating1Binding binding = FragmentRating1Binding.inflate(getLayoutInflater());
         v = binding.getRoot();
         v.setClickable(true);
         v.setFocusable(true);
@@ -32,10 +32,13 @@ public class RatingFragment extends Fragment {
 
                 FragmentTransaction transaction2 = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction2.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                transaction2.replace(R.id.frameMain, new RatingFragment1()).commit();
+                transaction2.replace(R.id.frameMain, new RequestRatingFragment()).commit();
 
             }
         });
+
         return v;
     }
+
+
 }

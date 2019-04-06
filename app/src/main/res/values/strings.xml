@@ -12,11 +12,18 @@
     <string name="hint_name">نام</string>
     <string name="hint_family">نام خانوادگی</string>
     <color name="white">#fff</color>
+    <string name="accept_rules">شرایط و قوانین را می پذیرم</string>
+    <string name="request_consult_name">مشاور :</string>
+    <string name="request_consult_case">مورد مشاوره :</string>
+    <string name="text_rules">مطالعه شرایط و قوانین</string>
     <string name="txt_share_comment">دوستان و آشنایان خود را با استفاده از گزینه به اشتراک گذاری به روان پژوه معرفی کنید.</string>
     <string name="txt_introduction_code">کد دعوت شما</string>
     <string name="btn_accept">تایید</string>
     <string name="address">آدرس</string>
+    <string name="turning_consult_name">انتخاب مشاور</string>
     <string name="introducer_code">کد معرف</string>
+    <string name="turning_name">نام</string>
+    <string name="turning_consult_case">مورد مشاوره</string>
     <string name="hint_introducer_codee">کد معرف (اختیاری)</string>
     <string name="hint_mobile">شماره همراه (اختیاری)</string>
 </resources>

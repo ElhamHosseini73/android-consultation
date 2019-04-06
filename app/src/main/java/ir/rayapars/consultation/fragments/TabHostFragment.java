@@ -27,7 +27,7 @@ public class TabHostFragment extends Fragment {
         v.setFocusable(true);
         v.setClickable(true);
 
-        mTabHost = (FragmentTabHost) v.findViewById(android.R.id.tabhost);
+        mTabHost = v.findViewById(android.R.id.tabhost);
         mTabHost.setup(getContext(), getActivity().getSupportFragmentManager(), R.id.realtabcontent);
 
         View homeView = inflater.inflate(R.layout.view_main_page, null);
