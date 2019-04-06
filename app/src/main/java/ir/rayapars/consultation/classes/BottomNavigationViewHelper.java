@@ -1,5 +1,8 @@
 package ir.rayapars.consultation.classes;
 
+/**
+ * Created by ali on 5/23/2018.
+ */
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -20,7 +23,7 @@ public class BottomNavigationViewHelper {
             for (int i = 0; i < menuView.getChildCount(); i++) {
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
                 //noinspection RestrictedApi
-//                item.setShiftingMode(false);
+                item.setShifting(false);
                 // set once again checked value, so view will be updated
                 //noinspection RestrictedApi
                 item.setChecked(item.getItemData().isChecked());
@@ -31,4 +34,5 @@ public class BottomNavigationViewHelper {
             Log.e("BottomNav", "Unable to change value of shift mode", e);
         }
     }
+
 }
