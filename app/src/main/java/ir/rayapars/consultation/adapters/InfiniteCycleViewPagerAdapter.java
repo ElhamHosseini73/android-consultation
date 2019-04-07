@@ -16,6 +16,7 @@ import android.widget.Toast;
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.classes.ItemInfiniteCycleViewPager;
 import ir.rayapars.consultation.fragments.ConsultantFragment;
+import ir.rayapars.consultation.fragments.DepartmentFragment;
 import ir.rayapars.consultation.fragments.EditMyAccountFragment;
 import ir.rayapars.consultation.fragments.RatingFragment;
 
@@ -59,7 +60,9 @@ public class InfiniteCycleViewPagerAdapter extends PagerAdapter {
 
                 if (position == 0) {
 
-                    Toast.makeText(context, ":))", Toast.LENGTH_SHORT).show();
+                    FragmentTransaction transaction = context.getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                    transaction.add(R.id.frameMain, new DepartmentFragment()).addToBackStack("").commit();
 
                 } else if (position == 1) {
 

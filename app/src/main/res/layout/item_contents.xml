@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/item_background"
+            android:clickable="false"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:clickable="false">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/rayafa_font"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:paddingBottom="5dp"
+                    android:text="عنوان"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/textColorMain"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/tvDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTitle"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/rayafa_font"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:padding="3dp"
+                    android:paddingLeft="8dp"
+                    android:text="محتوا"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDesc"
+                    android:clickable="false"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/item_continue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left|center_vertical|center_horizontal|center"
+                        android:layout_weight="1"
+                        android:clickable="false"
+                        android:fontFamily="@font/rayafa_font"
+                        android:gravity="left"
+                        android:paddingLeft="6dp"
+                        android:text="ادامه مطلب"
+                        android:textColor="@color/blue"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvAuthor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="false"
+                        android:fontFamily="@font/rayafa_font"
+                        android:gravity="right"
+                        android:text="نویسنده"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="10dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:src="@drawable/ic_profile" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
