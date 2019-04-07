@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +32,10 @@ public class MainFragment extends Fragment {
         v.setFocusable(true);
 
         ItemInfiniteCycleViewPager[] item = new ItemInfiniteCycleViewPager[]{new ItemInfiniteCycleViewPager(R.drawable.ic_department, "دپارتمان‌ها"), new ItemInfiniteCycleViewPager(R.drawable.ic_note, "درخواست همکاری"), new ItemInfiniteCycleViewPager(R.drawable.ic_calendar, "نوبت‌دهی آنلاین"), new ItemInfiniteCycleViewPager(R.drawable.ic_team, "مشاوران")};
-        InfiniteCycleViewPagerAdapter infiniteCycleViewPagerAdapter = new InfiniteCycleViewPagerAdapter(v.getContext(), item);
+        InfiniteCycleViewPagerAdapter infiniteCycleViewPagerAdapter = new InfiniteCycleViewPagerAdapter((AppCompatActivity) v.getContext(), item);
         binding.hicvp.setAdapter(infiniteCycleViewPagerAdapter);
 
         return v;
+
     }
 }

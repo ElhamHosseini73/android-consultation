@@ -39,7 +39,6 @@ public class IntroAdapter extends PagerAdapter {
         return view == object;
     }
 
-
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         View view = (View) object;

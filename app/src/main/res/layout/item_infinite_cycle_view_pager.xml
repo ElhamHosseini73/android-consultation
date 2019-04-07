@@ -38,7 +38,7 @@
                 android:layout_marginTop="26dp"
                 android:fontFamily="@font/rayafa_font"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
