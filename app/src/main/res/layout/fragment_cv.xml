@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:noghteh="http://noghteh.ir"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llEmail"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rayafa_font"
+                    android:text="برگزاری کارگاه های عمومی مشاوره و روان درمانی توسط تیم علمی کلینیک"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_circule" />
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </FrameLayout>
+
+</layout>

@@ -13,7 +13,6 @@ import java.util.List;
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.databinding.ItemContentsBinding;
 import ir.rayapars.consultation.fragments.DetailContentsFragment;
-import ir.rayapars.consultation.fragments.MyAccountFragment;
 
 public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.MyHolder> {
 

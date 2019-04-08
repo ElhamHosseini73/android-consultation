@@ -16,6 +16,7 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import java.util.HashMap;
 
 import ir.rayapars.consultation.R;
+import ir.rayapars.consultation.adapters.ClinicAdapter;
 import ir.rayapars.consultation.databinding.FragmentClinicBinding;
 
 public class ClinicFragment extends Fragment implements BaseSliderView.OnSliderClickListener {
@@ -33,32 +34,32 @@ public class ClinicFragment extends Fragment implements BaseSliderView.OnSliderC
 
         HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
         file_maps.put("1", R.drawable.slider);
-        file_maps.put("2", R.drawable.slider2);
-        file_maps.put("3", R.drawable.slider1);
+        file_maps.put("2", R.drawable.slider1);
+        file_maps.put("3", R.drawable.slider2);
 
         for (String name : file_maps.keySet()) {
 
             TextSliderView textSliderView = new TextSliderView(getContext());
-            // initialize a SliderLayout
+
             textSliderView
                     .image(file_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
                     .setOnSliderClickListener(this);
 
-            //add your extra information
-            textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
-                    .putString("extra", name);
-
-         //  binding.slider.addSlider(textSliderView);
+            binding.slider.addSlider(textSliderView);
 
         }
 
-      /*  binding.slider.setPresetTransformer(SliderLayout.Transformer.ZoomOut);
+        binding.slider.setPresetTransformer(SliderLayout.Transformer.ZoomOut);
         binding.slider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         binding.slider.setCustomAnimation(new DescriptionAnimation());
-        binding.slider.setDuration(4000);*/
+        binding.slider.setDuration(4000);
 
+
+        ClinicAdapter clinicAdapter = new ClinicAdapter(v.getContext(), getFragmentManager());
+        binding.viewpager.setAdapter(clinicAdapter);
+
+        binding.tabs.setupWithViewPager(binding.viewpager);
         return v;
     }
 

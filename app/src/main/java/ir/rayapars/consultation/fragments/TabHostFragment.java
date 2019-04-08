@@ -32,7 +32,7 @@ public class TabHostFragment extends Fragment {
 
         View homeView = inflater.inflate(R.layout.view_main_page, null);
         View consultantView = inflater.inflate(R.layout.view_consultant, null);
-        View ratingView = inflater.inflate(R.layout.view_rating, null);
+       // View ratingView = inflater.inflate(R.layout.view_rating, null);
         View clinicView = inflater.inflate(R.layout.view_clinic, null);
         View myAccountView = inflater.inflate(R.layout.view_my_account, null);
 
@@ -42,8 +42,8 @@ public class TabHostFragment extends Fragment {
         mTabHost.addTab(mTabHost.newTabSpec("tab4").setIndicator(clinicView),
                 ClinicFragment.class, null);
 
-        mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator(ratingView),
-                RatingFragment.class, null);
+//        mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator(ratingView),
+//                RatingFragment.class, null);
 
         mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator(consultantView),
                 ConsultantFragment.class, null);

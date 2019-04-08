@@ -12,6 +12,11 @@
     <string name="hint_name">نام</string>
     <string name="hint_family">نام خانوادگی</string>
     <color name="white">#fff</color>
+    <string name="anatical">روانکاوی ارزان</string>
+    <string name="clinic_address">ادرس مشهد</string>
+    <string name="cv">رزومه</string>
+    <string name="service">خدمات</string>
+    <string name="map">مکان مرکز</string>
     <string name="accept_rules">شرایط و قوانین را می پذیرم</string>
     <string name="request_consult_name">مشاور :</string>
     <string name="request_consult_case">مورد مشاوره :</string>
