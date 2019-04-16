@@ -55,7 +55,6 @@ public class ClinicFragment extends Fragment implements BaseSliderView.OnSliderC
         binding.slider.setCustomAnimation(new DescriptionAnimation());
         binding.slider.setDuration(4000);
 
-
         ClinicAdapter clinicAdapter = new ClinicAdapter(v.getContext(), getFragmentManager());
         binding.viewpager.setAdapter(clinicAdapter);
 
