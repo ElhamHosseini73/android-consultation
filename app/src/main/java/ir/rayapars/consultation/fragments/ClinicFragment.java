@@ -42,6 +42,7 @@ public class ClinicFragment extends Fragment implements BaseSliderView.OnSliderC
             TextSliderView textSliderView = new TextSliderView(getContext());
 
             textSliderView
+
                     .image(file_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
                     .setOnSliderClickListener(this);

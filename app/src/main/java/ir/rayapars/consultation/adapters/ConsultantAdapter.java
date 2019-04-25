@@ -1,27 +1,40 @@
 package ir.rayapars.consultation.adapters;
 
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.R;
-import ir.rayapars.consultation.classes.ModelConsultant;
+import ir.rayapars.consultation.classes.AdviserList;
+import ir.rayapars.consultation.classes.Advisers;
+import ir.rayapars.consultation.classes.App;
+import ir.rayapars.consultation.classes.RetrofitClient;
 import ir.rayapars.consultation.databinding.ItemConsultantBinding;
 import ir.rayapars.consultation.fragments.ConsultantDetailsFragment;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.ViewHolder> {
 
-    List<ModelConsultant> list;
-
+    List<Advisers> list;
     AppCompatActivity context;
+    int page = 1, perPage = 10;
+    ProgressDialogFragment progressDialog;
+    public int lastPosition;
 
-    public ConsultantAdapter(List<ModelConsultant> list, AppCompatActivity context) {
+    public ConsultantAdapter(List<Advisers> list, AppCompatActivity context) {
 
         this.list = list;
         this.context = context;
@@ -40,9 +53,10 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        viewHolder.binding.tvConsultantJob.setText("مسئول فنی");
+        viewHolder.binding.tvConsultantJob.setText(list.get(i).job);
         viewHolder.binding.tvConsultantName.setText(list.get(i).name);
-        viewHolder.binding.tvField.setText(list.get(i).work);
+        viewHolder.binding.tvField.setText(list.get(i).groupName);
+        viewHolder.binding.consultantPic.setImageURI(Uri.parse(list.get(i).image));
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +68,18 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
 
             }
         });
+
+        if (i + 1 == page * perPage) {
+
+            progressDialog = new ProgressDialogFragment();
+            progressDialog.show(context.getSupportFragmentManager(), "");
+            progressDialog.setCancelable(false);
+
+            page++;
+
+            AdviserList();
+
+        }
     }
 
     @Override
@@ -70,6 +96,50 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
             this.binding = binding;
         }
 
+    }
+
+    public void AdviserList() {
+
+        RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
+        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "");
+        call.enqueue(new Callback<AdviserList>() {
+            @Override
+            public void onResponse(Call<AdviserList> call, Response<AdviserList> response) {
+
+                if (response.isSuccessful()) {
+
+                    if (response.body().status.equals("1")) {
+
+                        progressDialog.dismiss();
+
+                        progressDialog.dismiss();
+
+                        list.addAll(response.body().advisers);
+                        notifyItemRangeChanged(list.size() - perPage, list.size());
+
+                    } else {
+
+                        Toast.makeText(context, "خطا در ارتباط با سرور", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+
+                    }
+
+                } else {
+
+                    Toast.makeText(context, "خطا در ارتباط با سرور", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AdviserList> call, Throwable t) {
+
+                Toast.makeText(context, "خطا در ارتباط با سرور", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+
+            }
+        });
     }
 
 }
