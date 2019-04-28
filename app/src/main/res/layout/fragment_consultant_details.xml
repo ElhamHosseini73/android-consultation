@@ -56,6 +56,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -67,6 +68,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
+                                android:id="@+id/job"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -86,9 +88,7 @@
                 android:layout_height="match_parent"
                 android:scrollbars="none"
                 app:behavior_overlapTop="20dp"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
-                >
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -150,82 +150,14 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
-                                android:id="@+id/llPHD"
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recyEducation"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginBottom="10dp"
-                                android:orientation="horizontal">
+                                android:layout_height="wrap_content" />
 
-                                <TextView
-                                    android:id="@+id/tvPHD"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_weight="1"
-                                    android:lineSpacingExtra="8dp"
-                                    android:text="مشاوره"
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:lineSpacingExtra="8dp"
-                                    android:text="دکتری : "
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/llMSc"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginBottom="10dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/tvMSc"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_weight="1"
-                                    android:lineSpacingExtra="8dp"
-                                    android:text="مشاوره"
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:lineSpacingExtra="8dp"
-                                    android:text="کارشناسی ارشد : "
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/llBSc"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/tvBSc"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_weight="1"
-                                    android:lineSpacingExtra="8dp"
-                                    android:text="مشاوره"
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:lineSpacingExtra="8dp"
-                                    android:text="کارشناسی : "
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-                            </LinearLayout>
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
 
@@ -312,6 +244,7 @@
             </android.support.v7.widget.Toolbar>
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img"
                 android:layout_width="@dimen/image_width"
                 android:layout_height="@dimen/image_width"
                 android:layout_gravity="center_horizontal"

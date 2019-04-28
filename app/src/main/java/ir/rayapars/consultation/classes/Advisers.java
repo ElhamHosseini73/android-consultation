@@ -1,8 +1,8 @@
 package ir.rayapars.consultation.classes;
 
-import android.icu.text.SymbolTable;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Advisers {
 
@@ -12,8 +12,14 @@ public class Advisers {
     @SerializedName("reg_date")
     public String regDate;
     public String job;
+    public String text;
     public String active;
     public String rate;
     public String name;
+    public String id;
+    public String facebook;
+    public String instagram;
+    public String twitter;
+    public List<Education> education;
 
 }

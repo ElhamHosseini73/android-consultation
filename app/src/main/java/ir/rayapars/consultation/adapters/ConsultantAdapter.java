@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,12 +53,16 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
 
         viewHolder.binding.tvConsultantJob.setText(list.get(i).job);
         viewHolder.binding.tvConsultantName.setText(list.get(i).name);
         viewHolder.binding.tvField.setText(list.get(i).groupName);
         viewHolder.binding.consultantPic.setImageURI(Uri.parse(list.get(i).image));
+
+        Picasso.with(context.getApplicationContext()).load(list.get(i).image)
+                .placeholder(R.drawable.ic_profile_gray).error(R.drawable.ic_profile_gray)
+                .into(viewHolder.binding.consultantPic);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +70,9 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
 
                 FragmentTransaction transaction = context.getSupportFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
-                transaction.add(R.id.frameParent, new ConsultantDetailsFragment()).addToBackStack("").commit();
+                ConsultantDetailsFragment consultantDetailsFragment = new ConsultantDetailsFragment();
+                consultantDetailsFragment.id = list.get(i).id;
+                transaction.add(R.id.frameParent, consultantDetailsFragment).addToBackStack("").commit();
 
             }
         });

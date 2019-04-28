@@ -11,4 +11,8 @@ public interface RetrofitClient {
     @POST("adviser_list")
     Call<AdviserList> AdviserList( @Field("KEY") String KEY ,@Field("page") String page, @Field("pre_page") String prePage);
 
+    @FormUrlEncoded
+    @POST("adviser_details")
+    Call<AdviserDetails> adviserDetails( @Field("KEY") String KEY ,@Field("adv_id") String advId);
+
 }
