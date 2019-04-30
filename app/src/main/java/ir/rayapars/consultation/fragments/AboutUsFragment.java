@@ -7,18 +7,34 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
+import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
+import ir.rayapars.consultation.R;
+import ir.rayapars.consultation.classes.AboutMessage;
+import ir.rayapars.consultation.classes.App;
+import ir.rayapars.consultation.classes.PostDetails;
+import ir.rayapars.consultation.classes.RetrofitClient;
 import ir.rayapars.consultation.databinding.FragmentAboutUsBinding;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AboutUsFragment extends Fragment {
 
     View v;
+    ProgressDialogFragment progressDialog;
+    FragmentAboutUsBinding binding;
+
+    String mail, telegram, insta;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        FragmentAboutUsBinding binding = FragmentAboutUsBinding.inflate(getLayoutInflater());
+        binding = FragmentAboutUsBinding.inflate(getLayoutInflater());
         v = binding.getRoot();
         v.setFocusable(true);
         v.setClickable(true);
@@ -33,6 +49,67 @@ public class AboutUsFragment extends Fragment {
 
         binding.toolbar.txtPageName.setText("درباره ما");
 
+
+        progressDialog = new ProgressDialogFragment();
+        progressDialog.show(getActivity().getSupportFragmentManager(), "");
+        progressDialog.setCancelable(false);
+
         return v;
     }
+
+    public void About() {
+
+        RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
+        Call<AboutMessage> call = getData.aboutUs(App.KEY);
+
+        call.enqueue(new Callback<AboutMessage>() {
+
+            @Override
+            public void onResponse(Call<AboutMessage> call, Response<AboutMessage> response) {
+
+                if (response.isSuccessful()) {
+
+                    if (response.body().status.equals("1")) {
+
+                        binding.justifiedTextView.setText(response.body().about.about);
+
+                        try {
+                            mail = response.body().about.email;
+                            telegram = response.body().about.telegram;
+                            insta = response.body().about.instagram;
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        progressDialog.dismiss();
+
+
+                    } else {
+
+                        Toast.makeText(v.getContext(), response.body().message + "", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+
+                    }
+
+                } else {
+
+                    Toast.makeText(v.getContext(), "خطا در ارتباط با سرور", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AboutMessage> call, Throwable t) {
+
+                progressDialog.dismiss();
+                Toast.makeText(v.getContext(), "No Connect!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+    }
+
+
 }

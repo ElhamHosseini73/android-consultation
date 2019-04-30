@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:aapt="http://schemas.android.com/aapt"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:noghteh="http://noghteh.ir"
@@ -13,15 +12,14 @@
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
-
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:adjustViewBounds="true"
             android:fitsSystemWindows="true"
-            android:scaleType="fitXY"
             android:padding="4dp"
+            android:scaleType="fitXY"
             android:src="@drawable/camera"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

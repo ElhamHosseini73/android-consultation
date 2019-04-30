@@ -29,4 +29,9 @@ public interface RetrofitClient {
     @POST("post_details")
     Call<PostDetails> postDetails(@Field("KEY") String KEY, @Field("id") String id);
 
+
+    @FormUrlEncoded
+    @POST("about_us")
+    Call<AboutMessage> aboutUs(@Field("KEY") String KEY);
+
 }
