@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:aapt="http://schemas.android.com/aapt"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:noghteh="http://noghteh.ir"
@@ -20,6 +21,7 @@
             android:adjustViewBounds="true"
             android:fitsSystemWindows="true"
             android:scaleType="fitXY"
+            android:padding="4dp"
             android:src="@drawable/camera"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -54,6 +56,21 @@
                     android:textColor="@color/textColorMain"
                     android:textSize="15sp" />
 
+                <TextView
+                    android:id="@+id/tvtxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/rayafa_font"
+                    android:gravity="right"
+                    android:text="تیتر"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+
                 <LinearLayout
                     android:id="@+id/llRequest"
                     android:layout_width="wrap_content"
@@ -76,6 +93,7 @@
                         android:text="نوبت بگیرید"
                         android:textSize="13sp" />
                 </LinearLayout>
+
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
 

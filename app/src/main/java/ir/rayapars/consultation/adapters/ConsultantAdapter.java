@@ -34,7 +34,6 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
     AppCompatActivity context;
     int page = 1, perPage = 10;
     ProgressDialogFragment progressDialog;
-    public int lastPosition;
 
     public ConsultantAdapter(List<Advisers> list, AppCompatActivity context) {
 

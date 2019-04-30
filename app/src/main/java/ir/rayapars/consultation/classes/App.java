@@ -12,7 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class App extends SugarApp {
 
-
     public static Retrofit retrofit;
     private static final String BASE_URL = "http://www.khanehravanshenasi.ir/MoshaveranPanel/webservice/";
     public static final String KEY = "_Xs1r3kn34n65j4bolc46v4Kc56fd8";

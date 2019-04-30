@@ -37,7 +37,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-//
 public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.OnOffsetChangedListener {
 
     View x;
@@ -171,7 +170,7 @@ public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.
                                 .placeholder(R.drawable.ic_profile_gray).error(R.drawable.ic_profile_gray)
                                 .into(binding.img);
 
-                        EducationAdapter educationAdapter=new EducationAdapter((AppCompatActivity) x.getContext(),response.body().adviser.education);
+                        EducationAdapter educationAdapter = new EducationAdapter((AppCompatActivity) x.getContext(), response.body().adviser.education);
                         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
                         binding.recyEducation.setAdapter(educationAdapter);
                         binding.recyEducation.setLayoutManager(manager);

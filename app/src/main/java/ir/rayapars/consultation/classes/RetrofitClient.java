@@ -9,10 +9,24 @@ public interface RetrofitClient {
 
     @FormUrlEncoded
     @POST("adviser_list")
-    Call<AdviserList> AdviserList( @Field("KEY") String KEY ,@Field("page") String page, @Field("pre_page") String prePage);
+    Call<AdviserList> AdviserList(@Field("KEY") String KEY, @Field("page") String page, @Field("pre_page") String prePage);
 
     @FormUrlEncoded
     @POST("adviser_details")
-    Call<AdviserDetails> adviserDetails( @Field("KEY") String KEY ,@Field("adv_id") String advId);
+    Call<AdviserDetails> adviserDetails(@Field("KEY") String KEY, @Field("adv_id") String advId);
+
+
+    @FormUrlEncoded
+    @POST("blog_cats")
+    Call<BlogCatList> blogCatsList(@Field("KEY") String KEY);
+
+
+    @FormUrlEncoded
+    @POST("blog_list")
+    Call<BlogList> BlogList(@Field("KEY") String KEY, @Field("section_id") String sectionId, @Field("page") String page, @Field("pre_page") String prePage);
+
+    @FormUrlEncoded
+    @POST("post_details")
+    Call<PostDetails> postDetails(@Field("KEY") String KEY, @Field("id") String id);
 
 }
