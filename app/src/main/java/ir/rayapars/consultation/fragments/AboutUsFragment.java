@@ -1,5 +1,7 @@
 package ir.rayapars.consultation.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -47,12 +49,62 @@ public class AboutUsFragment extends Fragment {
             }
         });
 
-        binding.toolbar.txtPageName.setText("درباره ما");
+        binding.toolbar.txtPageName.setText("دربـاره مـا");
 
+
+        binding.imgTelegram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(telegram));
+                    startActivity(i);
+                } catch (Exception e) {
+                }
+
+            }
+        });
+
+
+        binding.imgInstagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(insta));
+                    startActivity(i);
+                } catch (Exception e) {
+                }
+
+            }
+        });
+
+
+        binding.imgEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                            "mailto", mail, null));
+                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, "");
+                    startActivity(Intent.createChooser(emailIntent, ""));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
 
         progressDialog = new ProgressDialogFragment();
         progressDialog.show(getActivity().getSupportFragmentManager(), "");
         progressDialog.setCancelable(false);
+
+        About();
 
         return v;
     }
@@ -110,6 +162,5 @@ public class AboutUsFragment extends Fragment {
 
 
     }
-
 
 }

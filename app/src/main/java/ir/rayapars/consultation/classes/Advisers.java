@@ -19,6 +19,9 @@ public class Advisers {
     public String id;
     public String facebook;
     public String instagram;
+    public String site;
+    public String telegram;
+    public String email;
     public String twitter;
     public List<Education> education;
 

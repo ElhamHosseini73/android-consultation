@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -69,6 +70,20 @@ public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.
         progressDialog.show(getActivity().getSupportFragmentManager(), "");
         progressDialog.setCancelable(false);
 
+        binding.imgTelegram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(urlTlg));
+                    startActivity(i);
+                } catch (Exception e) {
+                }
+
+            }
+        });
 
         binding.imgInstagram.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +98,39 @@ public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.
             }
         });
 
+        binding.imgEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                            "mailto", UrlMail, null));
+                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, "");
+                    startActivity(Intent.createChooser(emailIntent, ""));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        binding.imgWeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(urlSite));
+                    startActivity(i);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
 
         AdviserDetails();
         return x;
@@ -156,7 +204,6 @@ public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.
 
                     if (response.body().status.equals("1")) {
 
-
                         binding.title.setText(response.body().adviser.name);
                         binding.name.setText(response.body().adviser.name);
                         binding.job.setText(response.body().adviser.job);
@@ -164,7 +211,9 @@ public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.
                         progressDialog.dismiss();
 
                         UrlInsta = response.body().adviser.instagram;
-
+                        urlTlg = response.body().adviser.telegram;
+                        UrlMail = response.body().adviser.email;
+                        urlSite = response.body().adviser.site;
 
                         Picasso.with(x.getContext().getApplicationContext()).load(response.body().adviser.image)
                                 .placeholder(R.drawable.ic_profile_gray).error(R.drawable.ic_profile_gray)
@@ -173,6 +222,8 @@ public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.
                         EducationAdapter educationAdapter = new EducationAdapter((AppCompatActivity) x.getContext(), response.body().adviser.education);
                         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
                         binding.recyEducation.setAdapter(educationAdapter);
+                        binding.recyEducation.setNestedScrollingEnabled(false);
+                        binding.recyEducation.setHasFixedSize(false);
                         binding.recyEducation.setLayoutManager(manager);
 
 
