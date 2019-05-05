@@ -24,5 +24,7 @@ public class Advisers {
     public String email;
     public String twitter;
     public List<Education> education;
+    public List<Education> date_range;
+    public List<Education> pricing;
 
 }

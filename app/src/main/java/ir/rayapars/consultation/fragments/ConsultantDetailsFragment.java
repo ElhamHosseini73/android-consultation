@@ -31,9 +31,11 @@ import retrofit2.Response;
 public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.OnOffsetChangedListener {
 
     View x;
+
     public String id;
     ProgressDialogFragment progressDialog;
     FragmentConsultantDetailsBinding binding;
+
     private static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR = 0.9f;
     private static final float PERCENTAGE_TO_HIDE_TITLE_DETAILS = 0.3f;
     private static final int ALPHA_ANIMATIONS_DURATION = 200;
@@ -185,7 +187,7 @@ public class ConsultantDetailsFragment extends Fragment implements AppBarLayout.
     public void AdviserDetails() {
 
         RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AdviserDetails> call = getData.adviserDetails(App.KEY, id);
+        Call<AdviserDetails> call = getData.adviserDetails(App.KEY, id, "");
         call.enqueue(new Callback<AdviserDetails>() {
             @Override
             public void onResponse(Call<AdviserDetails> call, Response<AdviserDetails> response) {

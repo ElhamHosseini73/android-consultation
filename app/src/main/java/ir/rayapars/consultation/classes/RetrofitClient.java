@@ -13,8 +13,7 @@ public interface RetrofitClient {
 
     @FormUrlEncoded
     @POST("adviser_details")
-    Call<AdviserDetails> adviserDetails(@Field("KEY") String KEY, @Field("adv_id") String advId);
-
+    Call<AdviserDetails> adviserDetails(@Field("KEY") String KEY, @Field("adv_id") String advId, @Field("info") String info);
 
     @FormUrlEncoded
     @POST("blog_cats")

@@ -106,7 +106,7 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
     public void AdviserList() {
 
         RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "", "","");
+        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "", "", "");
         call.enqueue(new Callback<AdviserList>() {
             @Override
             public void onResponse(Call<AdviserList> call, Response<AdviserList> response) {

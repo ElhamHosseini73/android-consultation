@@ -1,5 +1,6 @@
 package ir.rayapars.consultation.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,17 +16,22 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.adapters.ConsultantAdapter;
 import ir.rayapars.consultation.adapters.DepartmentAdapter;
+import ir.rayapars.consultation.adapters.EducationAdapter;
+import ir.rayapars.consultation.classes.AdviserDetails;
 import ir.rayapars.consultation.classes.AdviserList;
 import ir.rayapars.consultation.classes.Advisers;
 import ir.rayapars.consultation.classes.App;
 import ir.rayapars.consultation.classes.BlogCat;
 import ir.rayapars.consultation.classes.BlogCatList;
+import ir.rayapars.consultation.classes.Education;
 import ir.rayapars.consultation.classes.RetrofitClient;
 import ir.rayapars.consultation.databinding.FragmentRatingBinding;
 import ir.rayapars.consultation.dialogFragment.PickerDialog;
@@ -41,9 +47,12 @@ public class RatingFragment extends Fragment {
     FragmentRatingBinding binding;
 
     List<String> listBlogCatStr, listAdviserStr;
+    String[] listDateStr;
+
     List<BlogCat> listBlogCat;
     List<Advisers> listAdviser;
-    int idBlogCatChose;
+    List<Education> listDate;
+    int idBlogCatChose, idAdviserChose;
 
     @Nullable
     @Override
@@ -54,11 +63,12 @@ public class RatingFragment extends Fragment {
         v.setClickable(true);
         v.setFocusable(true);
 
-        listBlogCatStr = new ArrayList<String>();
-        listAdviserStr = new ArrayList<String>();
+        listBlogCatStr = new ArrayList<>();
+        listAdviserStr = new ArrayList<>();
 
         listBlogCat = new ArrayList<>();
         listAdviser = new ArrayList<>();
+        listDate = new ArrayList<>();
 
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,9 +85,14 @@ public class RatingFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                FragmentTransaction fragmentManager = getFragmentManager().beginTransaction();
-                PickerDialog fragment = new PickerDialog();
-                fragment.show(fragmentManager, "dialog");
+                if (listDate.size() > 0 && listAdviserStr.size() > 0) {
+
+                    FragmentTransaction fragmentManager = getFragmentManager().beginTransaction();
+                    PickerDialog fragment = new PickerDialog();
+                    fragment.listDate = listDate;
+                    fragment.listDateStr = listDateStr;
+                    fragment.show(fragmentManager, "dialog");
+                }
 
             }
         });
@@ -113,6 +128,14 @@ public class RatingFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                if (listAdviserStr.size() > 0) {
+
+                    idAdviserChose = position;
+                    listDate = new ArrayList<>();
+                    AdviserDetails(listAdviser.get(position).id);
+
+                }
+
             }
 
             @Override
@@ -120,6 +143,7 @@ public class RatingFragment extends Fragment {
 
             }
         });
+
 
         blogCats();
 
@@ -240,5 +264,65 @@ public class RatingFragment extends Fragment {
         });
 
 
+    }
+
+    public void AdviserDetails(String adviserId) {
+
+        progressDialog = new ProgressDialogFragment();
+        progressDialog.show(getActivity().getSupportFragmentManager(), "");
+        progressDialog.setCancelable(false);
+
+        RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
+        Call<AdviserDetails> call = getData.adviserDetails(App.KEY, adviserId, "1");
+        call.enqueue(new Callback<AdviserDetails>() {
+            @Override
+            public void onResponse(Call<AdviserDetails> call, Response<AdviserDetails> response) {
+
+                if (response.isSuccessful()) {
+
+                    if (response.body().status.equals("1")) {
+
+                        progressDialog.dismiss();
+
+                        listDateStr = new String[response.body().adviser.date_range.size()];
+
+                        for (int i = 0; i < response.body().adviser.date_range.size(); i++) {
+
+                            listDate.add(response.body().adviser.date_range.get(i));
+                            listDateStr[i] = response.body().adviser.date_range.get(i).name;
+
+                        }
+
+                    } else {
+
+                        Toast.makeText(v.getContext(), response.body().message + "", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+
+                    }
+
+                } else {
+
+                    Toast.makeText(v.getContext(), "خطا در ارتباط با سرور", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AdviserDetails> call, Throwable t) {
+
+                progressDialog.dismiss();
+                Toast.makeText(v.getContext(), "No Connect!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 300) {
+        }
     }
 }
