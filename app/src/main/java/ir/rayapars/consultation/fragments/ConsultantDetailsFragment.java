@@ -7,30 +7,20 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.R;
-import ir.rayapars.consultation.adapters.ConsultantAdapter;
 import ir.rayapars.consultation.adapters.EducationAdapter;
 import ir.rayapars.consultation.classes.AdviserDetails;
-import ir.rayapars.consultation.classes.AdviserList;
-import ir.rayapars.consultation.classes.Advisers;
 import ir.rayapars.consultation.classes.App;
 import ir.rayapars.consultation.classes.RetrofitClient;
 import ir.rayapars.consultation.databinding.FragmentConsultantDetailsBinding;

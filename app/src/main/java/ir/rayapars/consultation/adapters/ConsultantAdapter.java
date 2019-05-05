@@ -4,7 +4,6 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +12,9 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.classes.AdviserList;
 import ir.rayapars.consultation.classes.Advisers;
@@ -108,7 +106,7 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
     public void AdviserList() {
 
         RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "");
+        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "", "","");
         call.enqueue(new Callback<AdviserList>() {
             @Override
             public void onResponse(Call<AdviserList> call, Response<AdviserList> response) {

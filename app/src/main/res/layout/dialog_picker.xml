@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rlRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/light_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/background_alert_dialog"
+            android:clickable="true"
+            android:gravity="center"
+            android:minWidth="230dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/rayafa_font"
+                    android:gravity="center"
+                    android:text="انتخاب تاریخ"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/textColorDialog"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:id="@+id/close"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_close" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llbody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <NumberPicker
+                        android:id="@+id/date_picker"
+                        android:layout_width="140dp"
+                        android:theme="@style/picker"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_btn_send"
+                android:fontFamily="@font/rayafa_font"
+                android:text="ادامه"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

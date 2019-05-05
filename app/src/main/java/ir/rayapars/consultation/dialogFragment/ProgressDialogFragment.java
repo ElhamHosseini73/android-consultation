@@ -1,4 +1,4 @@
-package ir.rayapars.consultation.DialogFragment;
+package ir.rayapars.consultation.dialogFragment;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

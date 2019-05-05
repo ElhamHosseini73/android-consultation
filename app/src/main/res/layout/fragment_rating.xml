@@ -4,8 +4,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="#f0f2f2"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#f0f2f2">
 
         <android.support.v7.widget.CardView
             android:id="@+id/lin"
@@ -94,11 +94,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
             android:fontFamily="@font/rayafa_font"
-            android:textSize="12dp"
             android:gravity="center"
             android:paddingRight="20dp"
             android:text="نوع مشاوره"
             android:textColor="#5C5B5B"
+            android:textSize="12dp"
             app:layout_constraintRight_toLeftOf="@id/imageCheir"
             app:layout_constraintTop_toBottomOf="@+id/lin" />
 
@@ -158,13 +158,14 @@
 
 
         <Spinner
+            android:id="@+id/catgory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/rayafa_font"
+            android:gravity="right"
             android:textColor="#131313"
             android:textSize="12dp"
-            android:entries="@array/spinnerType"
             app:layout_constraintRight_toLeftOf="@id/txt2"
             app:layout_constraintTop_toBottomOf="@+id/txt1" />
 
@@ -194,15 +195,16 @@
             app:layout_constraintRight_toLeftOf="@id/imageUser"
             app:layout_constraintTop_toBottomOf="@+id/imageCheir1" />
 
-
         <Spinner
+            android:id="@+id/spinneradviser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="20dp"
+            android:entries="@array/spinnerChoos"
             android:fontFamily="@font/rayafa_font"
+            android:gravity="right"
             android:textColor="#131313"
             android:textSize="12dp"
-            android:entries="@array/spinnerChoos"
             app:layout_constraintRight_toLeftOf="@id/txt3"
             app:layout_constraintTop_toBottomOf="@+id/imageCheir1" />
 
@@ -231,7 +233,6 @@
             android:textSize="12dp"
             app:layout_constraintRight_toLeftOf="@id/imageDate"
             app:layout_constraintTop_toBottomOf="@+id/imageUser" />
-
 
         <Button
             android:id="@+id/btnSave"

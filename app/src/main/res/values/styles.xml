@@ -18,6 +18,9 @@
         <item name="backgroundTint">@color/red</item>
     </style>
 
+    <style name="picker"> </style>
+
+
     <string-array name="spinnerType">
         <item>مشاوره فردی</item>
         <item>پیش از ازدواج</item>

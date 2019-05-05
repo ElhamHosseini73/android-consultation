@@ -11,13 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
-import ir.rayapars.consultation.R;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.classes.AboutMessage;
 import ir.rayapars.consultation.classes.App;
-import ir.rayapars.consultation.classes.PostDetails;
 import ir.rayapars.consultation.classes.RetrofitClient;
 import ir.rayapars.consultation.databinding.FragmentAboutUsBinding;
 import retrofit2.Call;

@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +11,8 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.R;
-import ir.rayapars.consultation.adapters.EducationAdapter;
-import ir.rayapars.consultation.classes.AdviserDetails;
 import ir.rayapars.consultation.classes.App;
 import ir.rayapars.consultation.classes.PostDetails;
 import ir.rayapars.consultation.classes.RetrofitClient;

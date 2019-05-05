@@ -14,11 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
-import ir.rayapars.consultation.adapters.ConsultantAdapter;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.adapters.ContentAdapter;
-import ir.rayapars.consultation.classes.AdviserList;
-import ir.rayapars.consultation.classes.Advisers;
 import ir.rayapars.consultation.classes.App;
 import ir.rayapars.consultation.classes.Blog;
 import ir.rayapars.consultation.classes.BlogList;

@@ -3,7 +3,6 @@ package ir.rayapars.consultation.adapters;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +11,9 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.classes.App;
 import ir.rayapars.consultation.classes.Blog;

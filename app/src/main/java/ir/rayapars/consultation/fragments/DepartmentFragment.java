@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
-import ir.rayapars.consultation.adapters.ConsultantAdapter;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.adapters.DepartmentAdapter;
 import ir.rayapars.consultation.classes.App;
 import ir.rayapars.consultation.classes.BlogCat;

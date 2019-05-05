@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import ir.rayapars.consultation.DialogFragment.ProgressDialogFragment;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.adapters.ConsultantAdapter;
 import ir.rayapars.consultation.classes.AdviserList;
 import ir.rayapars.consultation.classes.Advisers;
@@ -53,7 +53,7 @@ public class ConsultantFragment extends Fragment {
     public void AdviserList() {
 
         RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "");
+        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "", "", "");
         call.enqueue(new Callback<AdviserList>() {
             @Override
             public void onResponse(Call<AdviserList> call, Response<AdviserList> response) {
