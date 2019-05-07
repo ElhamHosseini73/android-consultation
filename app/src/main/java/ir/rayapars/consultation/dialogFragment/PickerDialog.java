@@ -1,5 +1,7 @@
 package ir.rayapars.consultation.dialogFragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +17,8 @@ import java.util.List;
 import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.classes.Education;
 import ir.rayapars.consultation.databinding.DialogPickerBinding;
+
+import static android.app.Activity.RESULT_OK;
 
 public class PickerDialog extends DialogFragment {
 
@@ -47,6 +51,21 @@ public class PickerDialog extends DialogFragment {
         binding.close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                dismiss();
+
+            }
+        });
+
+        binding.btnAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent();
+                intent.putExtra("idDate", listDate.get(binding.datePicker.getValue()).val);
+                intent.putExtra("nameDate", listDate.get(binding.datePicker.getValue()).name);
+                getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
 
                 dismiss();
 

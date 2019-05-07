@@ -15,6 +15,10 @@ public interface RetrofitClient {
     @POST("adviser_details")
     Call<AdviserDetails> adviserDetails(@Field("KEY") String KEY, @Field("adv_id") String advId, @Field("info") String info);
 
+   @FormUrlEncoded
+   @POST("appointment")
+   Call<AboutMessage> appointment(@Field("KEY") String KEY, @Field("id") String id,@Field("date") String date,@Field("type") String type,@Field("dtype") String dtype,@Field("fname") String fname,@Field("lname") String lname,@Field("mobile") String mobile,@Field("email") String email);
+
     @FormUrlEncoded
     @POST("blog_cats")
     Call<BlogCatList> blogCatsList(@Field("KEY") String KEY);

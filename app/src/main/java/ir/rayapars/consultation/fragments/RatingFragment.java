@@ -1,5 +1,6 @@
 package ir.rayapars.consultation.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -29,6 +30,7 @@ import ir.rayapars.consultation.classes.AdviserDetails;
 import ir.rayapars.consultation.classes.AdviserList;
 import ir.rayapars.consultation.classes.Advisers;
 import ir.rayapars.consultation.classes.App;
+import ir.rayapars.consultation.classes.Appointment;
 import ir.rayapars.consultation.classes.BlogCat;
 import ir.rayapars.consultation.classes.BlogCatList;
 import ir.rayapars.consultation.classes.Education;
@@ -43,7 +45,7 @@ import retrofit2.Response;
 public class RatingFragment extends Fragment {
 
     View v;
-    ProgressDialogFragment progressDialog;
+
     FragmentRatingBinding binding;
 
     List<String> listBlogCatStr, listAdviserStr;
@@ -53,6 +55,9 @@ public class RatingFragment extends Fragment {
     List<Advisers> listAdviser;
     List<Education> listDate;
     int idBlogCatChose, idAdviserChose;
+    String nameDate, idDate;
+
+    public static final int DATEPICKER_FRAGMENT = 1;
 
     @Nullable
     @Override
@@ -91,7 +96,9 @@ public class RatingFragment extends Fragment {
                     PickerDialog fragment = new PickerDialog();
                     fragment.listDate = listDate;
                     fragment.listDateStr = listDateStr;
+                    fragment.setTargetFragment(RatingFragment.this, DATEPICKER_FRAGMENT);
                     fragment.show(fragmentManager, "dialog");
+
                 }
 
             }
@@ -101,6 +108,10 @@ public class RatingFragment extends Fragment {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                nameDate = "";
+                idDate = "";
+                binding.txt4.setText("تاریخ مشاوره را انتخاب نمایید.");
 
                 if (listBlogCatStr.size() > 0) {
 
@@ -128,6 +139,10 @@ public class RatingFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                nameDate = "";
+                idDate = "";
+                binding.txt4.setText("تاریخ مشاوره را انتخاب نمایید.");
+
                 if (listAdviserStr.size() > 0) {
 
                     idAdviserChose = position;
@@ -144,6 +159,43 @@ public class RatingFragment extends Fragment {
             }
         });
 
+        binding.btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (listAdviserStr.size() > 0 && nameDate.trim().length() > 0) {
+
+                    Appointment appointment = new Appointment();
+                    appointment.uid = "1";
+                    appointment.id = listAdviser.get(idAdviserChose).id;
+                    appointment.nameAdviser = listAdviser.get(idAdviserChose).name;
+                    appointment.date = idDate;
+                    appointment.nameDate = nameDate;
+                    if (binding.present.isChecked()) {
+                        appointment.type = "1";
+                    } else {
+                        appointment.type = "0";
+                    }
+                    appointment.dtype = listBlogCat.get(idBlogCatChose).id;
+                    appointment.dtypeName = listBlogCat.get(idBlogCatChose).title;
+                    appointment.fname = "";
+                    appointment.lname = "";
+                    appointment.mobile = "";
+                    appointment.email = "";
+
+                    List<Appointment> list = new ArrayList<>();
+                    list.add(appointment);
+
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    RatingFragment1 ratingFragment1 = new RatingFragment1();
+                    ratingFragment1.list=list;
+                    transaction.add(R.id.frameMain, ratingFragment1).addToBackStack("").commit();
+
+                } else {
+                    Toast.makeText(getContext(), "لطفا اطلاعات مورد نظر را کامل کنید.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         blogCats();
 
@@ -152,6 +204,8 @@ public class RatingFragment extends Fragment {
     }
 
     public void blogCats() {
+
+        final ProgressDialogFragment progressDialog;
 
         progressDialog = new ProgressDialogFragment();
         progressDialog.show(getActivity().getSupportFragmentManager(), "");
@@ -211,6 +265,7 @@ public class RatingFragment extends Fragment {
 
     public void AdviserList(String catId) {
 
+        final ProgressDialogFragment progressDialog;
         progressDialog = new ProgressDialogFragment();
         progressDialog.show(getActivity().getSupportFragmentManager(), "");
         progressDialog.setCancelable(false);
@@ -268,6 +323,7 @@ public class RatingFragment extends Fragment {
 
     public void AdviserDetails(String adviserId) {
 
+        final ProgressDialogFragment progressDialog;
         progressDialog = new ProgressDialogFragment();
         progressDialog.show(getActivity().getSupportFragmentManager(), "");
         progressDialog.setCancelable(false);
@@ -322,7 +378,15 @@ public class RatingFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if (requestCode == 300) {
+        if (resultCode == Activity.RESULT_OK) {
+
+            Bundle bundle = data.getExtras();
+            nameDate = bundle.getString("nameDate");
+            idDate = bundle.getString("idDate");
+
+            binding.txt4.setText(nameDate);
         }
+
     }
+
 }
