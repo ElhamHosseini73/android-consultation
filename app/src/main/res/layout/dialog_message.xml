@@ -34,7 +34,7 @@
                 android:fontFamily="@font/rayafa_font"
                 android:text="درخواست شما با موفقیت ثبت شد."
                 android:textColor="#292828"
-                android:textSize="10dp" />
+                android:textSize="11dp" />
 
 
 
@@ -53,7 +53,7 @@
                 android:fontFamily="@font/rayafa_font"
                 android:text="خب"
                 android:textColor="#2F73A7"
-                android:textSize="10dp" />
+                android:textSize="11dp" />
 
         </LinearLayout>
 

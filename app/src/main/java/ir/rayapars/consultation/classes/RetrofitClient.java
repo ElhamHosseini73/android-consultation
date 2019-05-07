@@ -24,6 +24,10 @@ public interface RetrofitClient {
     Call<AboutMessage> report(@Field("KEY") String KEY, @Field("first_name") String first_name, @Field("last_name") String last_name, @Field("text") String text, @Field("mobile") String mobile, @Field("adviser_name") String adviser_name);
 
     @FormUrlEncoded
+    @POST("suggest")
+    Call<AboutMessage> suggest(@Field("KEY") String KEY, @Field("text") String text, @Field("type") String type);
+
+    @FormUrlEncoded
     @POST("blog_cats")
     Call<BlogCatList> blogCatsList(@Field("KEY") String KEY);
 
