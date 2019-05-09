@@ -45,10 +45,9 @@ public class RewardCodeFragment extends Fragment {
 
             }
         });
+
         return v;
 
     }
-
-
 
 }

@@ -9,7 +9,7 @@ public interface RetrofitClient {
 
     @FormUrlEncoded
     @POST("adviser_list")
-    Call<AdviserList> AdviserList(@Field("KEY") String KEY, @Field("page") String page, @Field("pre_page") String prePage, @Field("simple") String simple, @Field("cat") String cat , @Field("city") String city);
+    Call<AdviserList> AdviserList(@Field("KEY") String KEY, @Field("page") String page, @Field("pre_page") String prePage, @Field("simple") String simple, @Field("cat") String cat, @Field("city") String city);
 
     @FormUrlEncoded
     @POST("adviser_details")
@@ -32,6 +32,10 @@ public interface RetrofitClient {
     Call<cities> getCities(@Field("KEY") String KEY);
 
     @FormUrlEncoded
+    @POST("share_links")
+    Call<cities> shareLinks(@Field("KEY") String KEY);
+
+    @FormUrlEncoded
     @POST("blog_cats")
     Call<BlogCatList> blogCatsList(@Field("KEY") String KEY);
 
@@ -46,6 +50,6 @@ public interface RetrofitClient {
 
     @FormUrlEncoded
     @POST("about_us")
-    Call<AboutMessage> aboutUs(@Field("KEY") String KEY);
+    Call<AboutMessage> aboutUs(@Field("KEY") String KEY, @Field("terms") String terms);
 
 }

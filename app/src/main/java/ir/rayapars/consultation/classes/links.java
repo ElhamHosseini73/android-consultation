@@ -1,10 +1,8 @@
 package ir.rayapars.consultation.classes;
 
-import java.util.List;
+public class links {
 
-public class cities {
-
-    public List<Education> cities;
+    public About links;
     public String message;
     public String status;
 

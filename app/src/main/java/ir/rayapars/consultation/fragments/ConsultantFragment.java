@@ -16,8 +16,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import ir.rayapars.consultation.classes.Education;
 import ir.rayapars.consultation.classes.cities;
-import ir.rayapars.consultation.classes.city;
 import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
 import ir.rayapars.consultation.adapters.ConsultantAdapter;
 import ir.rayapars.consultation.classes.AdviserList;
@@ -36,7 +36,7 @@ public class ConsultantFragment extends Fragment {
     FragmentConsultantBinding binding;
 
     String[] cityStr;
-    List<city> cityList;
+    List<Education> cityList;
 
     @Nullable
     @Override
@@ -57,7 +57,7 @@ public class ConsultantFragment extends Fragment {
                 binding.listViewConsultant.setLayoutManager(manager);
                 binding.listViewConsultant.setAdapter(consultantAdapter);
 
-                AdviserList(cityList.get(position).id);
+                AdviserList(cityList.get(position).val);
 
             }
 
@@ -68,7 +68,6 @@ public class ConsultantFragment extends Fragment {
         });
 
         getCities();
-        AdviserList("");
 
         return v;
     }
