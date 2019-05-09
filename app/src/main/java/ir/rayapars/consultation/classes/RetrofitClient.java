@@ -32,10 +32,6 @@ public interface RetrofitClient {
     Call<cities> getCities(@Field("KEY") String KEY);
 
     @FormUrlEncoded
-    @POST("share_links")
-    Call<cities> shareLinks(@Field("KEY") String KEY);
-
-    @FormUrlEncoded
     @POST("blog_cats")
     Call<BlogCatList> blogCatsList(@Field("KEY") String KEY);
 
@@ -46,7 +42,6 @@ public interface RetrofitClient {
     @FormUrlEncoded
     @POST("post_details")
     Call<PostDetails> postDetails(@Field("KEY") String KEY, @Field("id") String id);
-
 
     @FormUrlEncoded
     @POST("about_us")
