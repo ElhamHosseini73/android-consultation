@@ -7,8 +7,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import ir.rayapars.consultation.classes.App;
+import ir.rayapars.consultation.classes.RetrofitClient;
+import ir.rayapars.consultation.classes.cities;
 import ir.rayapars.consultation.databinding.FragmentRewardCodeBinding;
+import ir.rayapars.consultation.dialogFragment.ProgressDialogFragment;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RewardCodeFragment extends Fragment {
 
@@ -37,4 +48,7 @@ public class RewardCodeFragment extends Fragment {
         return v;
 
     }
+
+
+
 }

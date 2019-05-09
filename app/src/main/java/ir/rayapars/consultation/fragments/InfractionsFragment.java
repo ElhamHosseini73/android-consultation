@@ -22,7 +22,6 @@ import retrofit2.Response;
 
 public class InfractionsFragment extends Fragment {
 
-
     View v;
     FragmentInfractionsBinding binding;
     ProgressDialogFragment progressDialog;

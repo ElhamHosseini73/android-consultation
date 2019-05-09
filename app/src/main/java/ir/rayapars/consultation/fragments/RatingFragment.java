@@ -188,7 +188,7 @@ public class RatingFragment extends Fragment {
 
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                     RatingFragment1 ratingFragment1 = new RatingFragment1();
-                    ratingFragment1.list=list;
+                    ratingFragment1.list = list;
                     transaction.add(R.id.frameMain, ratingFragment1).addToBackStack("").commit();
 
                 } else {
@@ -271,7 +271,7 @@ public class RatingFragment extends Fragment {
         progressDialog.setCancelable(false);
 
         final RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AdviserList> call = getData.AdviserList(App.KEY, "", "", "1", catId);
+        Call<AdviserList> call = getData.AdviserList(App.KEY, "", "", "1", catId, "");
         call.enqueue(new Callback<AdviserList>() {
             @Override
             public void onResponse(Call<AdviserList> call, Response<AdviserList> response) {

@@ -33,7 +33,6 @@ public class FeadBackFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-
         binding = FragmentFeedbackBinding.inflate(getLayoutInflater());
         v = binding.getRoot();
         v.setFocusable(true);
@@ -108,7 +107,6 @@ public class FeadBackFragment extends Fragment {
 
 
     }
-
 
     public void suggest() {
 

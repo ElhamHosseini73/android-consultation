@@ -32,11 +32,13 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
     AppCompatActivity context;
     int page = 1, perPage = 10;
     ProgressDialogFragment progressDialog;
+    public String cityId;
 
-    public ConsultantAdapter(List<Advisers> list, AppCompatActivity context) {
+    public ConsultantAdapter(List<Advisers> list, AppCompatActivity context, String cityId) {
 
         this.list = list;
         this.context = context;
+        this.cityId = cityId;
     }
 
     @NonNull
@@ -106,7 +108,7 @@ public class ConsultantAdapter extends RecyclerView.Adapter<ConsultantAdapter.Vi
     public void AdviserList() {
 
         RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "", "", "");
+        Call<AdviserList> call = getData.AdviserList(App.KEY, page + "", perPage + "", "", "", cityId);
         call.enqueue(new Callback<AdviserList>() {
             @Override
             public void onResponse(Call<AdviserList> call, Response<AdviserList> response) {
