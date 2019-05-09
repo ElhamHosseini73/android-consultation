@@ -108,7 +108,7 @@ public class AboutUsFragment extends Fragment {
     public void About() {
 
         RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AboutMessage> call = getData.aboutUs(App.KEY ,"");
+        Call<AboutMessage> call = getData.aboutUs(App.KEY, "", "");
 
         call.enqueue(new Callback<AboutMessage>() {
 

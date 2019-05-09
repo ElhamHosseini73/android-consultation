@@ -1,5 +1,9 @@
 package ir.rayapars.consultation.classes;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 public class About {
 
     public String title;
@@ -13,5 +17,6 @@ public class About {
     public String linkedin;
     public String pinterest;
     public String terms;
-
+    @SerializedName("contact_info")
+    public List<Education> contactInfo;
 }

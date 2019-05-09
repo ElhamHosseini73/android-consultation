@@ -50,6 +50,6 @@ public interface RetrofitClient {
 
     @FormUrlEncoded
     @POST("about_us")
-    Call<AboutMessage> aboutUs(@Field("KEY") String KEY, @Field("terms") String terms);
+    Call<AboutMessage> aboutUs(@Field("KEY") String KEY, @Field("terms") String terms, @Field("contact") String contact);
 
 }

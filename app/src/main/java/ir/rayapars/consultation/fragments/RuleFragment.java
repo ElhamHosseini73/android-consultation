@@ -55,7 +55,7 @@ public class RuleFragment extends Fragment {
     public void About() {
 
         RetrofitClient getData = App.getRetrofit().create(RetrofitClient.class);
-        Call<AboutMessage> call = getData.aboutUs(App.KEY, "1");
+        Call<AboutMessage> call = getData.aboutUs(App.KEY, "1","");
 
         call.enqueue(new Callback<AboutMessage>() {
 
