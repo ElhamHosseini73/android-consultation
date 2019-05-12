@@ -12,6 +12,8 @@ public class UserInfo extends SugarRecord {
     public String last_name;
     public String mobile;
     public String email;
+    public String address;
+    public String reg_date;
 
     public UserInfo() {
 

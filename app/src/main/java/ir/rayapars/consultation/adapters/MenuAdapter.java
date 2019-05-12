@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -35,6 +36,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
     private int position;
     DrawerLayout drawerLayout;
 
+    TextView txtName;
     boolean checkRead = false;
     private static final int REED_REQUEST_CODE = 300;
 
@@ -60,6 +62,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
 
         holder.binding.titleItemMenu.setText(list.get(position).titleMenu + "");
         holder.binding.imgItemMenu.setImageDrawable(holder.itemView.getResources().getDrawable(list.get(position).imgMenu));
+
+        txtName = (TextView) holder.binding.header.findViewById(R.id.txtName);
+
+        List<UserInfo> infoList = UserInfo.listAll(UserInfo.class);
+
+        txtName.setText(infoList.get(0).last_name + infoList.get(0).first_name);
 
         if (position == 0) {
 

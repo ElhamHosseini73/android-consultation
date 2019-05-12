@@ -48,6 +48,10 @@ public interface RetrofitClient {
     Call<AboutMessage> aboutUs(@Field("KEY") String KEY, @Field("terms") String terms, @Field("contact") String contact);
 
     @FormUrlEncoded
+    @POST("customers_info")
+    Call<Login> customersInfo(@Field("KEY") String KEY, @Field("uid") String uid, @Field("MDU") String MDU);
+
+    @FormUrlEncoded
     @POST("login")
     Call<Login> Login(@Field("KEY") String KEY, @Field("first_name") String first_name, @Field("last_name") String last_name, @Field("email") String email, @Field("mobile") String mobile, @Field("token") String token);
 
