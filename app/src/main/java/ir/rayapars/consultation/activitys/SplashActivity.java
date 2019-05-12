@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import java.util.List;
+
 import ir.rayapars.consultation.R;
+import ir.rayapars.consultation.classes.IntroShow;
+import ir.rayapars.consultation.classes.UserInfo;
 
 public class SplashActivity extends AppCompatActivity {
 
-    SharedPreferences sp = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +29,27 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                sp = getSharedPreferences("sp", 0);
 
-                //Installation app
-                String is_Installation = sp.getString("Installation", "false");
+                List<IntroShow> listInstal = IntroShow.listAll(IntroShow.class);
+                List<UserInfo> infoList = IntroShow.listAll(UserInfo.class);
 
-                if (is_Installation.equals("false")) {
+                if (listInstal.size() > 0) {
+
+                    if (infoList.size() > 0) {
+
+                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                        startActivity(intent);
+
+                    } else {
+
+                        Intent intent = new Intent(SplashActivity.this, CompletedProfileActivity.class);
+                        startActivity(intent);
+                    }
+
+                } else {
 
                     Intent intent = new Intent(SplashActivity.this, Intro.class);
                     startActivity(intent);
-                }
-                if (is_Installation.equals("true")) {
-
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                    startActivity(intent);
-
                 }
 
                 finish();

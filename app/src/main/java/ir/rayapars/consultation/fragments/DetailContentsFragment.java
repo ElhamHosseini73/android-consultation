@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,17 @@ public class DetailContentsFragment extends Fragment {
 
         PostDetails();
 
+        binding.nobat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.add(R.id.frameParent, new RatingFragment()).addToBackStack("").commit();
+
+            }
+        });
+
+
         return x;
     }
 
@@ -62,6 +74,7 @@ public class DetailContentsFragment extends Fragment {
                         binding.tvtxt.setText(response.body().post.full_text);
 
                         progressDialog.dismiss();
+                        binding.llRequest.setVisibility(View.GONE);
 
                         Picasso.with(x.getContext().getApplicationContext()).load(response.body().post.image)
                                 .placeholder(R.drawable.ic_profile_gray).error(R.drawable.ic_profile_gray)

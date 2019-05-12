@@ -157,7 +157,6 @@
             app:layout_constraintRight_toLeftOf="@id/imageCheir1"
             app:layout_constraintTop_toBottomOf="@+id/txt1" />
 
-
         <Spinner
             android:id="@+id/catgory"
             android:layout_width="wrap_content"
@@ -169,7 +168,6 @@
             android:textSize="12dp"
             app:layout_constraintRight_toLeftOf="@id/txt2"
             app:layout_constraintTop_toBottomOf="@+id/txt1" />
-
 
         <ImageView
             android:id="@+id/imageUser"

@@ -47,4 +47,8 @@ public interface RetrofitClient {
     @POST("about_us")
     Call<AboutMessage> aboutUs(@Field("KEY") String KEY, @Field("terms") String terms, @Field("contact") String contact);
 
+    @FormUrlEncoded
+    @POST("login")
+    Call<Login> Login(@Field("KEY") String KEY, @Field("first_name") String first_name, @Field("last_name") String last_name, @Field("email") String email, @Field("mobile") String mobile, @Field("token") String token);
+
 }

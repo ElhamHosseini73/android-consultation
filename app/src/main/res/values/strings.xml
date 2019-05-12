@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Consultation</string>
+    <string name="app_name">روان پژوه</string>
     <string name="turning_introducer_code">کد معرف (اختیاری)</string>
     <string name="turning_email">پست الکترونیکی (اختیاری)</string>
     <string name="turning_family">نام خانوادگی</string>

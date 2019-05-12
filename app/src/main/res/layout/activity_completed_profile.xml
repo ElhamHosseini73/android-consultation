@@ -247,6 +247,7 @@
             android:layout_marginRight="20dp"
             android:gravity="right"
             android:orientation="horizontal"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/llConsultName">
@@ -328,6 +329,14 @@
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent" />
 
+        <FrameLayout
+            android:id="@+id/face"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 </layout>

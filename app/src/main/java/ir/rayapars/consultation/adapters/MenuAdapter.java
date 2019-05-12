@@ -1,5 +1,6 @@
 package ir.rayapars.consultation.adapters;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -9,10 +10,14 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.List;
 
+import ir.rayapars.consultation.activitys.CompletedProfileActivity;
+import ir.rayapars.consultation.activitys.SplashActivity;
 import ir.rayapars.consultation.classes.MenuClass;
+import ir.rayapars.consultation.classes.UserInfo;
 import ir.rayapars.consultation.fragments.AboutUsFragment;
 import ir.rayapars.consultation.fragments.CallFragment;
 import ir.rayapars.consultation.fragments.FeadBackFragment;
@@ -112,6 +117,17 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyHolder> {
                     transaction.add(R.id.frameParent, new AboutUsFragment()).addToBackStack("").commit();
 
                 } else if (list.get(position).idMenu.equals("9")) {
+
+
+                    UserInfo.deleteAll(UserInfo.class);
+
+                    context.finish();
+                    Intent intent = new Intent(context, CompletedProfileActivity.class);
+                    context.startActivity(intent);
+
+                    Toast.makeText(context, "خروج از حساب کاربری با موفقیت انجام شد", Toast.LENGTH_SHORT).show();
+
+
                 }
 
                 if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {

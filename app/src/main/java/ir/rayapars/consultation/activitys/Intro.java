@@ -11,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.List;
+
 import ir.rayapars.consultation.adapters.IntroAdapter;
 import ir.rayapars.consultation.R;
+import ir.rayapars.consultation.classes.IntroShow;
 
 public class Intro extends AppCompatActivity {
 
@@ -63,6 +66,10 @@ public class Intro extends AppCompatActivity {
                 if (current < layouts.length) {
 
                 } else {
+
+                    IntroShow introShow = new IntroShow();
+                    introShow.Instal = "true";
+                    introShow.save();
 
                     // move to next screen
                     startActivity(new Intent(Intro.this, CompletedProfileActivity.class));

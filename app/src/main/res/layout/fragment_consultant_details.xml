@@ -2,14 +2,13 @@
 <layout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:aapt="http://schemas.android.com/aapt"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:noghteh="http://noghteh.ir"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff">
 
-        <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <android.support.design.widget.CoordinatorLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
@@ -206,6 +205,31 @@
                                 android:layout_margin="10dp"
                                 android:src="@drawable/instagram" />
                         </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llRequest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="?android:attr/actionBarSize"
+                        android:background="@drawable/view_border"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/nobat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/rayafa_font"
+                            android:text="نوبت بگیرید"
+                            android:textSize="13sp"/>
+
                     </LinearLayout>
 
                 </LinearLayout>

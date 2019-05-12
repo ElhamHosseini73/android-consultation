@@ -1,6 +1,7 @@
 package ir.rayapars.consultation.fragments;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import ir.rayapars.consultation.R;
 import ir.rayapars.consultation.classes.AboutMessage;
 import ir.rayapars.consultation.classes.App;
 import ir.rayapars.consultation.classes.RetrofitClient;
@@ -41,7 +43,6 @@ public class RewardCodeFragment extends Fragment {
         v.setClickable(true);
 
         binding.toolbar.txtPageName.setText("دعوت دوستان");
-
         binding.toolbar.imBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +100,17 @@ public class RewardCodeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                try {
+
+                    Intent sendIntent = new Intent(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, app);
+                    sendIntent.setType("text/plain");
+                    getContext().startActivity(Intent.createChooser(sendIntent, getContext().getResources().getText(R.string.app_name)));
+
+                } catch (Resources.NotFoundException e) {
+
+                    e.printStackTrace();
+                }
             }
         });
 
