@@ -54,6 +54,15 @@ public class DetailContentsFragment extends Fragment {
             }
         });
 
+        binding.llRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.add(R.id.frameParent, new RatingFragment()).addToBackStack("").commit();
+
+            }
+        });
 
         return x;
     }
@@ -74,7 +83,6 @@ public class DetailContentsFragment extends Fragment {
                         binding.tvtxt.setText(response.body().post.full_text);
 
                         progressDialog.dismiss();
-                        binding.llRequest.setVisibility(View.GONE);
 
                         Picasso.with(x.getContext().getApplicationContext()).load(response.body().post.image)
                                 .placeholder(R.drawable.ic_profile_gray).error(R.drawable.ic_profile_gray)

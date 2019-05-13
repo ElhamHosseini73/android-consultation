@@ -1,5 +1,6 @@
 package ir.rayapars.consultation.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -28,12 +29,13 @@ public class MyAccountFragment extends Fragment {
 
     View v;
     ProgressDialogFragment progressDialog;
+    FragmentMyAccountBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        FragmentMyAccountBinding binding = FragmentMyAccountBinding.inflate(getLayoutInflater());
+        binding = FragmentMyAccountBinding.inflate(getLayoutInflater());
         v = binding.getRoot();
         v.setFocusable(true);
         v.setClickable(true);
@@ -43,8 +45,10 @@ public class MyAccountFragment extends Fragment {
             public void onClick(View v) {
 
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                EditMyAccountFragment editMyAccountFragment = new EditMyAccountFragment();
+                editMyAccountFragment.setTargetFragment(MyAccountFragment.this, 300);
                 transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
-                transaction.add(R.id.frameMain, new EditMyAccountFragment()).addToBackStack("").commit();
+                transaction.add(R.id.frameMain, editMyAccountFragment).addToBackStack("").commit();
 
             }
         });
@@ -74,7 +78,10 @@ public class MyAccountFragment extends Fragment {
 
                     if (response.body().status.equals("1")) {
 
-                        Toast.makeText(getContext(), "" + response.body().status, Toast.LENGTH_SHORT).show();
+                        binding.tvName.setText(response.body().user_info.first_name + response.body().user_info.last_name);
+                        binding.tvPhoneNumber.setText(response.body().user_info.mobile);
+                        binding.tvEmail.setText(response.body().user_info.email);
+                        binding.tvIntroducer.setText(response.body().user_info.address);
 
                         progressDialog.dismiss();
 
@@ -103,7 +110,22 @@ public class MyAccountFragment extends Fragment {
             }
         });
 
-
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == 300) {
+
+            List<UserInfo> list = UserInfo.listAll(UserInfo.class);
+            binding.tvName.setText(list.get(0).first_name + list.get(0).last_name);
+            binding.tvPhoneNumber.setText(list.get(0).mobile);
+            binding.tvEmail.setText(list.get(0).email);
+            binding.tvIntroducer.setText(list.get(0).address);
+
+        }
+
+
+    }
 }

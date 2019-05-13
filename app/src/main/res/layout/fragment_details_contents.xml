@@ -78,7 +78,6 @@
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
-                    android:visibility="gone"
                     android:paddingTop="5dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="5dp">

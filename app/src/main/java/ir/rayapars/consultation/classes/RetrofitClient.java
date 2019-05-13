@@ -1,9 +1,13 @@
 package ir.rayapars.consultation.classes;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface RetrofitClient {
 
@@ -54,5 +58,15 @@ public interface RetrofitClient {
     @FormUrlEncoded
     @POST("login")
     Call<Login> Login(@Field("KEY") String KEY, @Field("first_name") String first_name, @Field("last_name") String last_name, @Field("email") String email, @Field("mobile") String mobile, @Field("token") String token);
+
+
+    @FormUrlEncoded
+    @POST("update_customer")
+    Call<Login> updateCustomer(@Field("KEY") String KEY, @Field("first_name") String first_name, @Field("last_name") String last_name, @Field("email") String email, @Field("uid") String uid, @Field("MDU") String MDU, @Field("address") String address);
+
+
+    @FormUrlEncoded
+    @POST("slider")
+    Call<List<Slider>> slider(@Field("KEY") String key);
 
 }
